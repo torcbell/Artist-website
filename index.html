@@ -1,118 +1,439 @@
-<html>
-  <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Landing Page</title>
-  
-  <meta name="description" content="Victoria Campbell, badsignifier, artist, writer, critic, spike art magazine, campbell carolan, new york, viki.wiki, penelopemachine,">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>International Welcome Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+
   <style>
-    p {
-      max-width: 1024px;
+    :root {
+      --accent: #000;
+      --bg: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Work Sans', 'Comic Sans MS', monospace;
+      background-color: var(--bg);
+      color: var(--accent);
+      line-height: 1.5;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 120px repeat(4, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      height: 100vh;
+      border: 4px solid var(--accent);
+    }
+
+    .vertical-label {
+      grid-row: 1 / span 10;
+      background-color: var(--accent);
+      color: var(--bg);
+      font-size: 48px;
+      font-weight: 800;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 3px;
+      border-right: 4px solid var(--accent);
+      text-transform: uppercase;
+      text-align: justify;
+      padding: 10px;
+    }
+
+    .cell {
+      background-color: var(--bg);
+      border: 4px solid var(--accent);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--accent);
+    }
+
+    .cell h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cell .meta {
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .cell .highlight {
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+      }
+
+      .vertical-label {
+        writing-mode: horizontal-tb;
+        font-size: 32px;
+        grid-column: 1 / -1;
+        grid-row: auto;
+        justify-content: start;
+        padding: 10px 20px;
+        border-right: none;
+        border-bottom: 4px solid var(--accent);
+      }
     }
   </style>
 </head>
-  <h1><a href="https://github.com/torcbell/Artist-website">Studio</h1></a>
-  <h2>b > 1989, Sans Serriffe. Lives and works Caissa Superiore.</h2>
- <hr>
 <body>
 
-  
-  <body>
-<center>
- <div class="row">
-  <div class="column">
-   
-        <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
-      <img src="https://uvp.viki.wiki/assets/pageapp/art-system-kunstsystem.png"  width= "100">
+  <div class="grid-container">
+    <!-- Vertical Label -->
+    <div class="vertical-label" id="welcomeLabel">Loading...</div>
 
-        
-      
-      
+    <!-- Sample filled cells -->
+
+    <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
     </div>
-  
-     </center>  
 
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
 
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
 
-    </a>
-                                                          </body>
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
 
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
 
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+     <div class="cell">
+      <h2>Gallery Name</h2>
+      <div class="meta">123 Art Street</div>
+      <div class="meta">Stockholm, Sweden</div>
+      <div class="meta">+46 123 456 789</div>
+      <div class="highlight">January: Artist Name</div>
+    </div>
+
+    <div class="cell">
+      <h2>Gallery Title</h2>
+      <div class="meta">456 Culture Ave</div>
+      <div class="meta">Göteborg</div>
+      <div class="meta">+46 987 654 321</div>
+      <div class="highlight">February: Solo Exhibit</div>
+    </div>
+
+    <!-- 47 empty cells (shortened for brevity) -->
+    <!-- Paste more <div class="cell"></div> until you reach 50 total grid items -->
+    <!-- Fill these in as needed -->
+    <!-- Example of just a few more: -->
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <!-- Keep going until you have 50 total including label -->
+  </div>
+
+  <!-- JavaScript to rotate welcome message -->
+  <script>
+    const messages = [
+      "welcome visitors",
+      "bienvenue visiteurs",
+      "willkommen besucher",
+      "bienvenidos visitantes",
+      "benvenuti visitatori",
+      "välkommen besökare",
+      "bem-vindos visitantes",
+      "ようこそ",
+      "欢迎游客",
+      "환영합니다 방문객",
+      "добро пожаловать",
+      "hoş geldiniz",
+      "ברוכים הבאים",
+      "स्वागत है आगंतुकों",
+      "καλώς ήρθατε επισκέπτες"
+    ];
+
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("welcomeLabel").textContent = randomMessage;
+  </script>
+</body>
+</html>

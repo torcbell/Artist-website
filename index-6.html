@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SPAIN Exhibition Grid</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #ddd;
+      font-family: Arial, sans-serif;
+    }
+
+    .grid-container {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 5px solid black;
+    }
+
+    .grid-cell {
+      display: flex;
+      border: 6px solid black;
+      border-right: none;
+      border-bottom: none;
+      background: white;
+      min-height: 160px;
+    }
+
+    .grid-cell:nth-child(3n) {
+      border-right: 0; /* Remove right border from last column */
+    }
+
+    .grid-cell:nth-last-child(-n+3) {
+      border-bottom: 0; /* Remove bottom border from last row */
+    }
+
+    .side {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      background: black;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 5px 0;
+      min-width: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 2px;
+    }
+
+    .content {
+      padding: 10px 14px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .title {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #222;
+    }
+
+    @media (max-width: 800px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+
+    <!-- Cell 1 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Juana de Aizpuru</div>
+        <div class="small">Arrieta 17<br>28004 Madrid</div>
+        <div class="small">Mr. Jiri Georg Dokoupil<br>Mr. Julian Sarmiento</div>
+      </div>
+    </div>
+
+    <!-- Cell 2 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Sala Gaspar</div>
+        <div class="small">Consell de Cent 323<br>08007 Barcelona</div>
+        <div class="small">Mr. Fernando Leirín</div>
+      </div>
+    </div>
+
+    <!-- Cell 3 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Olga María</div>
+        <div class="small">Claudio Coello 63<br>28001 Madrid</div>
+        <div class="small">Mr. María Luisa Fernández Suárez</div>
+      </div>
+    </div>
+
+    <!-- Cell 4 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Fúcares</div>
+        <div class="small">C/ Almagro 3<br>28010 Madrid</div>
+        <div class="small">Javier Buzón, Andreas Schulze, Begoña Goyenechea</div>
+      </div>
+    </div>
+
+    <!-- Cell 5 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería La Máquina Española</div>
+        <div class="small">Plaza de Molina 1<br>Madrid</div>
+        <div class="small">Mr. Patricio Cabrera</div>
+      </div>
+    </div>
+
+    <!-- Cell 6 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Joan Prats</div>
+        <div class="small">Valencia 296<br>08009 Barcelona</div>
+        <div class="small">Mr. Ràfols Casamada</div>
+      </div>
+    </div>
+
+ <!-- Cell 1 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Juana de Aizpuru</div>
+        <div class="small">Arrieta 17<br>28004 Madrid</div>
+        <div class="small">Mr. Jiri Georg Dokoupil<br>Mr. Julian Sarmiento</div>
+      </div>
+    </div>
+
+    <!-- Cell 2 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Sala Gaspar</div>
+        <div class="small">Consell de Cent 323<br>08007 Barcelona</div>
+        <div class="small">Mr. Fernando Leirín</div>
+      </div>
+    </div>
+
+    <!-- Cell 3 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Olga María</div>
+        <div class="small">Claudio Coello 63<br>28001 Madrid</div>
+        <div class="small">Mr. María Luisa Fernández Suárez</div>
+      </div>
+    </div>
+
+    <!-- Cell 4 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Fúcares</div>
+        <div class="small">C/ Almagro 3<br>28010 Madrid</div>
+        <div class="small">Javier Buzón, Andreas Schulze, Begoña Goyenechea</div>
+      </div>
+    </div>
+
+    <!-- Cell 5 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería La Máquina Española</div>
+        <div class="small">Plaza de Molina 1<br>Madrid</div>
+        <div class="small">Mr. Patricio Cabrera</div>
+      </div>
+    </div>
+
+    <!-- Cell 6 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Joan Prats</div>
+        <div class="small">Valencia 296<br>08009 Barcelona</div>
+        <div class="small">Mr. Ràfols Casamada</div>
+      </div>
+    </div>
+
+ <!-- Cell 1 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Juana de Aizpuru</div>
+        <div class="small">Arrieta 17<br>28004 Madrid</div>
+        <div class="small">Mr. Jiri Georg Dokoupil<br>Mr. Julian Sarmiento</div>
+      </div>
+    </div>
+
+    <!-- Cell 2 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Sala Gaspar</div>
+        <div class="small">Consell de Cent 323<br>08007 Barcelona</div>
+        <div class="small">Mr. Fernando Leirín</div>
+      </div>
+    </div>
+
+    <!-- Cell 3 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Olga María</div>
+        <div class="small">Claudio Coello 63<br>28001 Madrid</div>
+        <div class="small">Mr. María Luisa Fernández Suárez</div>
+      </div>
+    </div>
+
+    <!-- Cell 4 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Fúcares</div>
+        <div class="small">C/ Almagro 3<br>28010 Madrid</div>
+        <div class="small">Javier Buzón, Andreas Schulze, Begoña Goyenechea</div>
+      </div>
+    </div>
+
+    <!-- Cell 5 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería La Máquina Española</div>
+        <div class="small">Plaza de Molina 1<br>Madrid</div>
+        <div class="small">Mr. Patricio Cabrera</div>
+      </div>
+    </div>
+
+    <!-- Cell 6 -->
+    <div class="grid-cell">
+      <div class="side">SPAIN</div>
+      <div class="content">
+        <div class="title">Galería Joan Prats</div>
+        <div class="small">Valencia 296<br>08009 Barcelona</div>
+        <div class="small">Mr. Ràfols Casamada</div>
+      </div>
+    </div>
+
+
+
+    <!-- Add more cells as needed -->
+
+  </div>
+
+</body>
+</html>

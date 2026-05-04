@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viki URL Builder</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --border: #cbd5e1;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --border: #334155;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(2, 6, 23, 0.08);
+    }
+
+    h1, h2 {
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    form {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    select,
+    input,
+    textarea,
+    button {
+      width: 100%;
+      font: inherit;
+      color: inherit;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    textarea { min-height: 88px; resize: vertical; }
+
+    button {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      width: fit-content;
+      min-width: 180px;
+    }
+
+    .result {
+      margin-top: 12px;
+      display: none;
+      gap: 8px;
+    }
+
+    .result.active { display: grid; }
+
+    .url-preview {
+      font-weight: 700;
+      word-break: break-word;
+      color: var(--accent);
+    }
+
+    .log-list {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .log-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .log-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .keyboard {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      padding: 1px 6px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>Viki URL Builder</h1>
+      <p>1) Choose a domain authority. 2) Enter source information. 3) Press Enter in the details box to publish a new URL to the public log.</p>
+
+      <form id="slugForm">
+        <div class="grid">
+          <label>
+            Domain authority
+            <select id="domain" required>
+              <option value="">Select a domain…</option>
+              <option value="https://viki.wiki">viki.wiki</option>
+              <option value="https://wiki.viki.wiki">wiki.viki.wiki</option>
+              <option value="https://archive.viki.wiki">archive.viki.wiki</option>
+            </select>
+          </label>
+
+          <label>
+            Source type
+            <select id="sourceType" required>
+              <option value="name">Name</option>
+              <option value="project">Project title</option>
+              <option value="organization">Organization</option>
+              <option value="reference">Reference</option>
+              <option value="calendar">Calendar</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Input text (MLA/reference text is okay)
+          <input id="rawInput" type="text" placeholder="e.g., Doe, Jane. The Book Title..." required />
+        </label>
+
+        <button type="submit">Generate URL</button>
+      </form>
+
+      <section id="result" class="result" aria-live="polite">
+        <h2>Generated URL</h2>
+        <div id="urlPreview" class="url-preview"></div>
+        <label>
+          Editable details (press <span class="keyboard">Enter</span> to publish)
+          <textarea id="detailsBox" placeholder="Details appear here after you generate a slug."></textarea>
+        </label>
+      </section>
+    </section>
+
+    <section class="card">
+      <h2>Public URL Log</h2>
+      <p>URLs are stored locally in this browser for now.</p>
+      <ul id="publicLog" class="log-list"></ul>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('slugForm');
+    const result = document.getElementById('result');
+    const urlPreview = document.getElementById('urlPreview');
+    const detailsBox = document.getElementById('detailsBox');
+    const publicLog = document.getElementById('publicLog');
+
+    let pendingRecord = null;
+    const LOG_STORAGE_KEY = 'viki-public-url-log-v1';
+
+    function slugify(text) {
+      return text
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 90) || 'untitled';
+    }
+
+    function readLog() {
+      try {
+        return JSON.parse(localStorage.getItem(LOG_STORAGE_KEY) || '[]');
+      } catch {
+        return [];
+      }
+    }
+
+    function writeLog(entries) {
+      localStorage.setItem(LOG_STORAGE_KEY, JSON.stringify(entries));
+    }
+
+    function renderLog() {
+      const entries = readLog();
+      publicLog.innerHTML = '';
+
+      if (!entries.length) {
+        const empty = document.createElement('li');
+        empty.className = 'log-item';
+        empty.innerHTML = '<div>No URLs published yet.</div>';
+        publicLog.appendChild(empty);
+        return;
+      }
+
+      entries.forEach((entry) => {
+        const li = document.createElement('li');
+        li.className = 'log-item';
+        li.innerHTML = `
+          <a href="${entry.url}" target="_blank" rel="noopener noreferrer">${entry.url}</a>
+          <div>${entry.details}</div>
+          <div class="log-meta">${entry.sourceType} • ${new Date(entry.createdAt).toLocaleString()}</div>
+        `;
+        publicLog.appendChild(li);
+      });
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const domain = document.getElementById('domain').value;
+      const sourceType = document.getElementById('sourceType').value;
+      const rawInput = document.getElementById('rawInput').value.trim();
+
+      if (!domain || !rawInput) return;
+
+      const slug = slugify(`${sourceType}-${rawInput}`);
+      const generatedUrl = `${domain}/${slug}`;
+
+      pendingRecord = {
+        url: generatedUrl,
+        sourceType,
+        details: `${sourceType}: ${rawInput}`,
+        createdAt: new Date().toISOString()
+      };
+
+      urlPreview.textContent = generatedUrl;
+      detailsBox.value = pendingRecord.details;
+      result.classList.add('active');
+      detailsBox.focus();
+    });
+
+    detailsBox.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' || event.shiftKey) return;
+      event.preventDefault();
+
+      if (!pendingRecord) return;
+
+      pendingRecord.details = detailsBox.value.trim() || pendingRecord.details;
+      const entries = readLog();
+      entries.unshift(pendingRecord);
+      writeLog(entries);
+      renderLog();
+
+      pendingRecord = null;
+      detailsBox.value = '';
+      result.classList.remove('active');
+      form.reset();
+    });
+
+    renderLog();
+  </script>
+</body>
+</html>
